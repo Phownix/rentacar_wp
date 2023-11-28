@@ -1,0 +1,32 @@
+{% extends "./../../Account.html" %}
+
+{% block head %}
+<title>Mi Perfil | RentaCar</title>
+<link rel="stylesheet" href="/css/Account.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <header>
+        <h2>Rentar un Automovil</h2>
+        <p>Genera un pedido de renta de automovil en tienda</p>
+    </header>
+    <div class="rent">
+        {% if openform %}
+        <div class="form_rent">
+            <form action="">
+
+            </form>
+        </div>
+        {% else %}
+        <div class="startup">
+            <form action="/account/rent" method="get">
+                <input type="text" name="run" id="_run" placeholder="12345678-9" required autocomplete="off">
+                <button type="submit">Buscar Usuario</button>
+                <a href="/account/rent?run=false">Ingresar Manualmente</a>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

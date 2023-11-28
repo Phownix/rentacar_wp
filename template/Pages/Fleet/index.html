@@ -1,0 +1,52 @@
+{% extends "./../../Main.html" %}
+
+{% block head %}
+<title>Inicio | RentaCar</title>
+{% endblock %}
+
+{% block app %}
+<div class="app">
+<aside>
+	<div class="widget search">
+		<div class="header">
+			<h2>Filtrar</h2>
+			<p>Explora nuestra selección de vehículos.</p>
+		</div>
+		<form action="/" method="get">
+			<input type="text" name="q" id="q" placeholder="Buscar Vehiculo">
+			<select name="filters" id="filters">
+				<option value="0" selected disabled>-- Tipo Vehiculo --</option>
+				<option value="1">Sedán</option>
+				<option value="2">Coupé</option>
+				<option value="3">Hatchback</option>
+				<option value="4">SUV</option>
+				<option value="5">Camioneta</option>
+				<option value="6">Minivan</option>
+				<option value="7">Pickup</option>
+				<option value="8">Minivan</option>
+				<option value="9">Furgoneta</option>
+			</select>
+
+			<select name="filters" id="filters">
+				<option value="0" selected>Mostrar Todos</option>
+				<option value="1">Solo Disponible</option>
+				<option value="2">Solo No Disponible</option>
+			</select>
+
+			<button type="submit">Buscar</button>
+		</form>
+	</div>
+</aside>
+<section class="home">
+	<div class="header">
+		<h2>Explora Nuestra Flota</h2>
+		<p>Descubre la variedad de opciones para tu próximo viaje.</p>
+	</div>
+	<div class="list">
+		{% for value in cars %}
+			{% include "./../../Components/CarTarget.html" %}
+		{% endfor %}
+	</div>
+</section>
+</div>
+{% endblock %}

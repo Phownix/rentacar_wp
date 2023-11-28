@@ -1,4 +1,5 @@
 import CarSchema from "../schema/car_schema.js"
+import { v4 as uuidv4 } from 'uuid';
 
 export class CarModel {
     static async getAll () {
@@ -13,7 +14,14 @@ export class CarModel {
         return response
     }
 
-    static async push ({ body }) {
+    static async search_sku ( sku ) {
+        let response = await CarSchema.find({sku: new RegExp(sku)});
+
+        return response
+    }
+
+    static async pushOne ( body, nid=true ) {
+        body.uuid = nid ? uuidv4() : body.uuid;
         let _car = new CarSchema(body);
         let response = await _car.save();
 

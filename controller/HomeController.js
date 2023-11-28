@@ -1,21 +1,36 @@
 import { CarModel } from "../model/car_model.js";
 import { randomUUID } from "node:crypto";
 
-export class CarController {
+export class HomeController {
     static async index (req, res, next) {
         try {
             let cars = await CarModel.getAll();
-            res.json(cars);
+            res.render("Pages/Home/index", {
+                cars: cars
+            });
         } catch (error) {
             next(error)
         }
     }
 
-    static async getOne (req, res, next){
+    static async fleet (req, res, next) {
+        try {
+            let cars = await CarModel.getAll();
+            res.render("Pages/Fleet/index", {
+                cars: cars
+            });
+        } catch (error) {
+            next(error)
+        }
+    }
+
+    static async details (req, res, next){
         try {
             let { id } = req.params
             let car = await CarModel.getById(id);
-            res.json(car);
+            res.render("Pages/Home/details", {
+                car: car
+            });
         } catch (error) {
             next(error)
         }

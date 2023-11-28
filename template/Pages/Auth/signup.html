@@ -1,0 +1,37 @@
+{% extends "./../../Main.html" %}
+
+{% block head %}
+<title>Registrate | RentaCar</title>
+<link rel="stylesheet" href="/css/Auth.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <form method="POST" action="/auth/register">
+        <input type="hidden" name="uuid">
+        <header>
+            <h2>Registrate</h2>
+            <p>Crea tu cuenta para acceder a ofertas exclusivas y disfrutar de una experiencia única con nosotros.</p>
+        </header>
+        <div class="box">
+            <label for="firts_name">Nombre</label>
+            <label for="last_name">Apellido</label>
+            <input type="text" name="firts_name" id="_ftsnm">
+            <input type="text" name="last_name" id="_lstnm">
+        </div>
+
+        <label for="username">RUT/RUN</label>
+        <input type="text" name="username" id="_rt">
+
+        <label for="email">Correo Electronico</label>
+        <input type="text" name="email" id="_ml">
+
+        <label for="password">Contrasena</label>
+        <input type="password" name="password" id="_pass">
+
+
+        <button type="submit">Registrate</button>
+        <p class="helper center">Si ya posees una cuenta, ingresa haciendo clic en el siguiente enlace: <a href="/auth/login">Registrate Ahora</a>.</p>
+    </form>
+</section>
+{% endblock %}

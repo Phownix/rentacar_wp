@@ -1,0 +1,36 @@
+{% extends "./../../Account.html" %}
+
+{% block head %}
+<title>Mi Perfil | RentaCar</title>
+<link rel="stylesheet" href="/css/Account.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <header>
+        <h2>Gestionar Automoviles</h2>
+        <p>Ver los automoviles de la empresa</p>
+    </header>
+    <div class="manage cars">
+        <div class="list">
+            {% for x in result %}
+            <div class="target">
+                <div class="thumbnail">
+                    <img src="/assets/NotFound.png" alt="Not Found">
+                </div>
+                <div class="information">
+                    <h3>{{x.brand}} {{x.model}} {{x.year}}</h3>
+                    <span>{{x.sku}}</span>
+                    <div class="more">
+                        <p><strong>Categoria</strong>: {{x.category}}</p>
+                        <p><strong>Plasas</strong>: {{x.seating_places}}</p>
+                        <p><strong>Transmicion</strong>: {{x.transmission}}</p>
+                        <p><strong>Disponible</strong>: {{"Si" if x.availability else "No"}}</p>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+{% endblock %}

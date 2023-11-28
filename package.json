@@ -4,17 +4,31 @@
   "description": "",
   "main": "app.js",
   "type": "module",
+  "engines": {
+    "node": "14.x"
+  },
   "scripts": {
-    "dev": "npx nodemon app.js",
+    "up": "node scripts/up.js",
+    "dev": "npx nodemon --ext js,html app.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "InacapTEAM",
   "license": "ISC",
   "dependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/passport": "^1.0.16",
+    "@types/passport-local": "^1.0.38",
+    "bcrypt": "^5.1.1",
     "body-parser": "^1.20.2",
+    "cookie-parser": "^1.4.6",
     "dotenv": "^16.3.1",
     "express": "^4.18.2",
-    "mongoose": "^7.5.3",
-    "nodemon": "^3.0.1"
+    "express-session": "^1.17.3",
+    "mongoose": "^7.6.5",
+    "nodemon": "^3.0.1",
+    "nunjucks": "^3.2.4",
+    "passport": "^0.6.0",
+    "passport-local": "^1.0.0",
+    "uuid": "^9.0.1"
   }
 }

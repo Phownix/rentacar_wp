@@ -1,0 +1,25 @@
+{% extends "./../../Main.html" %}
+
+{% block head %}
+<title>Ingresar | RentaCar</title>
+<link rel="stylesheet" href="/css/Auth.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <form action="/auth/login" method="POST">
+        <header>
+            <h2>Ingresar</h2>
+            <p>Accede a tu cuenta para disfrutar de una experiencia personalizada. ¡Bienvenido de vuelta!</p>
+        </header>
+        <label for="username">RUT/RUN</label>
+        <input type="text" name="username" id="_rn">
+
+        <label for="password">Contrasena</label>
+        <input type="password" name="password" id="_password">
+
+        <button type="submit">Ingresar</button>
+        <p class="helper center">Si no posees una cuenta, registrate haciendo clic en el siguiente enlace: <a href="/auth/register">Registrate Ahora</a>.</p>
+    </form>
+</section>
+{% endblock %}

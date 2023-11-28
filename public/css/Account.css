@@ -1,0 +1,238 @@
+aside {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+aside .widget,
+aside .widget ul{
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+aside .widget {
+    background-color: #f9f9f9;
+    border-radius: .25rem;
+    padding: 1rem .5rem;
+}
+
+aside .widget ul li{
+    list-style: none;
+    overflow: hidden;
+    border-radius: .25rem;
+}
+
+aside .widget ul li:hover{
+    background-color: #f1f1f1;
+}
+
+aside .widget ul li a{
+    text-decoration: none;
+    color: inherit;
+    display: block;
+    padding: .5rem 1rem;
+    opacity: .9;
+}
+
+aside .widget ul li a.active{
+    background-color: darkcyan;
+    color: white;
+}
+
+aside .widget ul li a:hover{
+    opacity: 1;
+}
+
+aside .widget.account h2{
+    font-variant-caps: all-petite-caps;
+    padding: 0 1rem;
+}
+
+aside .widget.account span{
+    display: block;
+    font-size: .8em;
+    opacity: .8;
+    padding: 0 1rem;
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+}
+
+section{
+    background-color: #f9f9f9;
+    border-radius: .25rem;
+}
+
+section header{
+    display: flex;
+    flex-direction: column;
+    padding: 1rem;
+    border-bottom: 1px solid #d0d0d0;
+}
+
+section header h2{
+    display: block;
+    font-size: 2em;
+    font-variant-caps: all-petite-caps;
+    line-height: 1em;
+    margin-top: -.25rem;
+    margin-bottom: .25rem;
+}
+
+section header p {
+    display: block;
+    font-size: .9em;
+    opacity: .9;
+}
+
+section .set_one{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 5rem 2rem;
+    max-width: 500px;
+    margin: auto;
+    margin-top: 2rem;
+    text-align: center;
+    color: #757575;
+}
+
+section form{
+    display: flex;
+    flex-direction: column;
+}
+
+section form a{
+    text-align: center;
+    margin-top: .5rem;
+}
+
+section input,
+section textarea,
+section select,
+section .input{
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    border: 1px solid #d0d0d0;
+    background-color: transparent;
+    font-size: 1em;
+}
+
+section button[type="submit"]{
+    padding: .5rem 1rem;
+    border-radius: .25rem;
+    color: white;
+    background-color: darkcyan;
+    margin-top: 1rem;
+    font-weight: 600;
+    font-size: 1em;
+}
+
+
+section .search,
+section .startup{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+section .search .enter_id,
+section .startup{
+    margin-top: 2rem;
+}
+
+section .search .result{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+section .search .result .header{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+section .search .result.cars .list,
+section .manage.cars .list{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 1rem;
+    padding: 1rem;
+}
+
+section .search .result.cars .list .target,
+section .manage.cars .list .target{
+    display: grid;
+    grid-template-columns: 28% 1fr;
+    align-items: center;
+    justify-content: center;
+    grid-gap: 1rem;
+    border: 1px solid #e6e6e6;
+    padding: 1rem 1rem;
+}
+
+section .search .result.cars .list .target .thumbnail,
+section .manage.cars .list .target .thumbnail{
+    aspect-ratio: 3/2;
+}
+
+section .search .result.cars .list .target .thumbnail img,
+section .manage.cars .list .target .thumbnail img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+section .search .result.cars .list .target .information,
+section .manage.cars .list .target .information{
+    display: flex;
+    flex-direction: column;
+}
+
+section .search .result.cars .list .target .information h3,
+section .manage.cars .list .target .information h3{
+    font-variant-caps: all-petite-caps;
+    font-weight: 900;
+    letter-spacing: .5px;
+    word-spacing: 2px;
+    line-height: 1em;
+    font-size: 1.25em;
+    margin-top: -.4rem;
+}
+
+section .search .result.cars .list .target .information > span,
+section .manage.cars .list .target .information > span{
+    display: block;
+    font-size: .75em;
+    opacity: .8;
+}
+
+section .search .result.cars .list .target .information .more,
+section .manage.cars .list .target .information .more{
+    display: grid;
+    width: 100%;
+    grid-template-columns: repeat(2, auto);
+    gap: .2rem;
+    margin-top: .5rem;
+    font-size: .9em;
+}
+
+section .set_one svg{
+    width: 5em;
+    height: 5em;
+}
+
+
+section .set_one a{
+    border-radius: .25rem;
+    padding: .5rem 1rem;
+    background-color: #e6e6e6;
+    color: #757575;
+    text-decoration: none;
+}

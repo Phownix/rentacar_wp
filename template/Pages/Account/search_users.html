@@ -1,0 +1,39 @@
+{% extends "./../../Account.html" %}
+
+{% block head %}
+<title>Mi Perfil | RentaCar</title>
+<link rel="stylesheet" href="/css/Account.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <header>
+        <h2>Buscar Usuarios</h2>
+        <p>Ingresa el RUT/RUN del usuario</p>
+    </header>
+    <div class="search">
+        {% if result %}
+        <div class="result users">
+            <div class="header">
+                <div class="back">
+                    <a href="/account/search/users">Buscar Otra Ves</a>
+                </div>
+                <h3>Resultados: {{result.length}}</h3>
+            </div>
+            <div class="list">
+                {% for x in result %}
+                {{x.username}}
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="enter_id">
+            <form action="/account/search/users" method="get">
+                <input type="text" name="run" id="_run" placeholder="12345678-9">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

@@ -1,0 +1,53 @@
+{% extends "./../../Account.html" %}
+
+{% block head %}
+<title>Mi Perfil | RentaCar</title>
+<link rel="stylesheet" href="/css/Account.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <header>
+        <h2>Buscar Automovil</h2>
+        <p>Puedes ingresar el SKU del automovil</p>
+    </header>
+    <div class="search">
+        {% if result %}
+        <div class="result cars">
+            <div class="header">
+                <div class="back">
+                    <a href="/account/search/car">Buscar Otra Ves</a>
+                </div>
+                <h3>Resultados: {{result.length}}</h3>
+            </div>
+            <div class="list">
+                {% for x in result %}
+                <div class="target">
+                    <div class="thumbnail">
+                        <img src="/assets/NotFound.png" alt="Not Found">
+                    </div>
+                    <div class="information">
+                        <h3>{{x.brand}} {{x.model}} {{x.year}}</h3>
+                        <span>{{x.sku}}</span>
+                        <div class="more">
+                            <p><strong>Categoria</strong>: {{x.category}}</p>
+                            <p><strong>Plasas</strong>: {{x.seating_places}}</p>
+                            <p><strong>Transmicion</strong>: {{x.transmission}}</p>
+                            <p><strong>Disponible</strong>: {{"Si" if x.availability else "No"}}</p>
+                        </div>
+                    </div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% else %}
+        <div class="enter_id">
+            <form action="/account/search/car" method="get">
+                <input type="text" name="sku" id="_sku" placeholder="00000-AAAA-AAAA">
+                <button type="submit">Buscar</button>
+            </form>
+        </div>
+        {% endif %}
+    </div>
+</section>
+{% endblock %}

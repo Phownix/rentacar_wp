@@ -1,0 +1,16 @@
+<div class="car_target availability_{{value.availability}}">
+    <div class="thumbnail">
+        <img src="{{value.image if value.image else '/assets/NotFound.png'}}" alt="{{value.year}} {{value.brand}} {{value.model}} - {{value.category}}">
+    </div>
+    <h3 class="title">
+        {{value.brand}} {{value.model}} {{value.year}}
+        <span class="type">
+            {{value.category}}
+        </span>
+    </h3>
+    {% if value.availability %}
+        <a class="btn_target" href="/details/{{value.uuid}}">Ver Mas Informacion</a>
+    {% else %}
+        <span class="btn_target no_availability">No Disponible</span>
+    {% endif %}
+</div>

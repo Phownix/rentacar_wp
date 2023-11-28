@@ -1,0 +1,27 @@
+<aside>
+    <div class="account widget">
+        <h2>{{usr.firts_name}} {{usr.last_name}}</h2>
+        <span>{{usr.type}}</span>
+    </div>
+    <div class="job widget">
+        <ul>
+            <li><a class="{{'active' if page == 'rent'}}" href="/account/rent">Rentar Automovil</a></li>
+            <li><a class="{{'active' if page == 's_users'}}" href="/account/search/users">Buscar Usuario</a></li>
+            <li><a class="{{'active' if page == 's_car'}}" href="/account/search/car">Buscar Automovil</a></li>
+        </ul>
+    </div>
+    <div class="available widget">
+        <ul>
+            <li><a class="{{'active' if page == 'm_cars'}}" href="/account/manage/cars">Gestionar Automoviles</a></li>
+            <li><a class="{{'active' if page == 'm_users'}}" href="/account/manage/users">Gestionar Usuarios</a></li>
+            <li><a class="{{'active' if page == 'm_employees'}}" href="/account/manage/employees">Gestionar Empleados</a></li>
+            <li><a class="{{'active' if page == 'company'}}" href="/account/company">Configuracion Empresa</a></li>
+        </ul>
+    </div>
+    <div class="more widget">
+        <ul>
+            <li><a href="/logout">Cerrar Sesion</a></li>
+            <li><a href="/account/help">Ayuda</a></li>
+        </ul>
+    </div>
+</aside>

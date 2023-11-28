@@ -1,0 +1,27 @@
+<nav >
+    <div class="navbar-container">
+        <a class="navbar-brand" href="/">RentaCar</a>
+
+        <div class="collapse" id="navbar-collapse">
+            <ul class="navbar-menu">
+                <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/fleet">Nuestra Flota</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/companies">Empresas</a>
+                </li>
+
+                <li class="nav-item">
+                    {% if user %}
+                    <a href="/account" class="nav-link login">Mi Perfil</a>
+                    {% else %}
+                    <a href="/auth/login" class="nav-link login">Ingresar</a>
+                    {% endif %}
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>

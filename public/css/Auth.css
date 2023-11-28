@@ -1,0 +1,76 @@
+section {
+    display: flex;
+    justify-content: center;
+}
+
+section form {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    max-width: 25rem;
+    width: 100%;
+    margin-bottom: 2rem;
+}
+
+section header{
+    display: flex;
+    flex-direction: column;
+    margin-top: 2.5rem;
+}
+
+section header h2{
+    font-variant:small-caps;
+    font-variant-caps: all-petite-caps;
+    font-size: 2.5em;
+    font-weight: 900;
+}
+
+section header p{
+    font-size: initial;
+    color: inherit;
+}
+
+section form .box{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: .5rem 1rem;
+    width: 100%;
+}
+
+section form label {
+    margin-top: 1.2rem;
+    font-weight: 600;
+}
+
+section form input {
+    padding: .6rem 1rem;
+    border: 1px solid #ddd;
+    border-radius: .25rem;
+    width: 100%;
+}
+
+section form button {
+    background-color: darkcyan;
+    color: white;
+    padding: .45rem 1rem;
+    border-radius: .25rem;
+    font-weight: 600;
+    font-size: 1.2em;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+section form p.helper{
+    font-size: .8em;
+    opacity: .7;
+    padding: .5rem 2rem;
+}
+
+section form p.helper.center{
+    text-align: center;
+}
+
+section form p a{
+    color: darkcyan;
+    text-decoration: underline dotted;
+}
