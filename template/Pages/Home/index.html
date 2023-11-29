@@ -6,6 +6,25 @@
 
 {% block app %}
 <div class="home">
-
+    <div class="_search rent_reserve">
+        <header>
+            <h2>Reserva Tu Vehículo Hoy</h2>
+        <p>En nuestro sencillo formulario de reserva, elige las fechas que mejor se adapten a tu itinerario: desde la fecha de inicio de tu viaje hasta la fecha de entrega del vehículo. Además, personaliza tu experiencia de conducción seleccionando entre transmisión automática o manual. Para facilitar tu proceso de reserva y brindarte una atención personalizada, te invitamos a crear tu cuenta de usuario. Así, no solo aseguras tu vehículo ideal, sino que también accedes a beneficios exclusivos. ¡Reserva con nosotros y vive la libertad de viajar a tu propio ritmo!</p>
+        </header>
+        <form action="/" method="get">
+            <label for="_dt_start">Fecha de Inicio</label>
+            <label for="_dt_end">Fecha de Termino</label>
+            <label for="_transmission">Transmisión</label>
+            <span></span>
+            <input type="date" name="date_start" id="_dt_start">
+            <input type="date" name="date_end" id="_dt_end">
+            <select name="transmission" id="_transmission">
+                <option value="automatic" selected disabled>-- Selecciona Una --</option>
+                <option value="automatic">Automatico</option>
+                <option value="manual">Manual</option>
+            </select>
+            <button type="submit">Buscar</button>
+        </form>
+    </div>
 </div>
 {% endblock %}

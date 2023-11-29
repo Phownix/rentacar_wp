@@ -1,3 +1,5 @@
+import bcrypt from "bcrypt";
+
 import { UserModel } from "../model/user_model.js";
 import { CarModel } from "../model/car_model.js";
 
@@ -30,10 +32,16 @@ export class UserController {
     }
 
     static async rent (req, res, next) {
+        let usr = []
+        if(req.query.run != undefined && req.query.run){
+            usr = await UserModel.getByRut(req.query.run)
+        }
+
         res.render("Pages/Account/rent", {
             usr: req.user,
             page: "rent",
-            openform: req.query.run != undefined ? true : false
+            openform: (req.query.run && req.query.run != undefined) ? true : false,
+            user: usr
         })
     }
 
@@ -75,10 +83,30 @@ export class UserController {
     }
 
     static async manage_employees (req, res, next) {
+        let empl = await UserModel.getEmployee();
+
         res.render("Pages/Account/manage_employees", {
             usr: req.user,
-            page: "m_employees"
+            page: "m_employees",
+            employees: empl.length > 0 ? empl : false
         })
+    }
+
+    static async add_employee (req, res, next) {
+        res.render("Pages/Account/add_employee", {
+            usr: req.user,
+            page: "m_employees",
+            type: req.query.type ?? null
+        })
+    }
+
+    static async add_employee_post (req, res, next) {
+        const hash = bcrypt.hashSync("123456", 10);
+        req.body.password = hash;
+
+        let action = await UserModel.pushOne(req.body);
+
+        res.redirect("/account/manage/employees");
     }
 
     static async company (req, res, next) {

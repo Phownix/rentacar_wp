@@ -13,9 +13,12 @@
 			<p>Explora nuestra selección de vehículos.</p>
 		</div>
 		<form action="/" method="get">
-			<input type="text" name="q" id="q" placeholder="Buscar Vehiculo">
-			<select name="filters" id="filters">
-				<option value="0" selected disabled>-- Tipo Vehiculo --</option>
+			<label for="_q">Prueba Ingresando El SKU</label>
+			<input type="text" name="q" id="_q" placeholder="Buscar Vehiculo">
+
+			<label for="_type">Tipo De Vehiculo</label>
+			<select name="type" id="_type">
+				<option value="0" selected>Mostrar Todos</option>
 				<option value="1">Sedán</option>
 				<option value="2">Coupé</option>
 				<option value="3">Hatchback</option>
@@ -27,7 +30,15 @@
 				<option value="9">Furgoneta</option>
 			</select>
 
-			<select name="filters" id="filters">
+			<label for="_transmission">Transmisión</label>
+			<select name="transmission" id="_transmission">
+                <option value="all" selected>Mostrar Todos</option>
+                <option value="automatic">Solo Automatico</option>
+                <option value="manual">Solo Manual</option>
+            </select>
+
+			<label for="_available">Disponibles</label>
+			<select name="available" id="_available">
 				<option value="0" selected>Mostrar Todos</option>
 				<option value="1">Solo Disponible</option>
 				<option value="2">Solo No Disponible</option>

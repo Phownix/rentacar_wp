@@ -15,6 +15,43 @@
         {% if openform %}
         <div class="form_rent">
             <form action="">
+                <div class="box">
+                    <label for="_rn">RUN/RUT</label>
+                    <label for="_ft_name">Nombre</label>
+                    <label for="_lt_name">Apellido</label>
+                    <input type="text" name="username" id="_rn" {{'value='+user.username+' readonly' if user else ''}} required>
+                    <input type="text" name="firts_name" id="_ft_name" {{'value='+user.firts_name+' readonly' if user else ''}} required>
+                    <input type="text" name="last_name" id="_lt_name" {{'value='+user.last_name+' readonly' if user else ''}} required>
+                </div>
+
+                <div class="box">
+                    <label for="_dt_start">Fecha de Inicio</label>
+                    <label for="_dt_end">Fecha de Termino</label>
+                    <label for="_py_method">Medio de Pago</label>
+                    <input type="date" name="date_start" id="_dt_start">
+                    <input type="date" name="date_end" id="_dt_end">
+                    <select name="payment_method" id="_py_method">
+                        <option value="cash">Efectivo</option>
+                        <option value="debit_card">Tarjeta Débito</option>
+                        <option value="credit_card">Tarjeta Crédito</option>
+                    </select>
+                </div>
+
+                <div class="box box_car">
+                    <label for="_sku_car">SKU Vehiculo</label>
+                    <input type="text" name="sku_car" id="_sku_car">
+                    <div class="car_information">
+                        <h4>Nombre auto test</h4>
+                        <p><strong>Categoria</strong>: category</p>
+                        <p><strong>Plasas</strong>: seating_places</p>
+                        <p><strong>Transmicion</strong>: transmission</p>
+                        <p><strong>Disponible</strong>: Talvex</p>
+                        <p><strong>Precio</strong>: rentalPrice</p>
+                        <p><strong>Detalles</strong>: <a href="/details/uuid">Ver Aqui</a></p>
+                    </div>
+                </div>
+
+                <button type="submit">Generar Informe de Renta de Vehiculo</button>
 
             </form>
         </div>

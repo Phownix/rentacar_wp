@@ -20,6 +20,12 @@ export class UserModel {
         return response;
     }
 
+    static async getEmployee ( ) {
+        let response = await UserSchema.find({type: {$in: ["manager", "seller"]}});
+        
+        return response;
+    }
+
     static async search_rut ( rut ) {
         let response = await UserSchema.find({"username": rut});
 

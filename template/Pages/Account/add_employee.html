@@ -1,0 +1,45 @@
+{% extends "./../../Account.html" %}
+
+{% block head %}
+<title>Mi Perfil | RentaCar</title>
+<link rel="stylesheet" href="/css/Account.css">
+{% endblock %}
+
+{% block app %}
+<section>
+    <header>
+        <h2>Gestionar Empleados</h2>
+        <p>Agrega, Edita y Elimina Cuentas de Empleados</p>
+    </header>
+
+    <div class="add_employee">
+        <form action="/account/manage/employees/add" method="post">
+            <input type="hidden" name="uuid">
+            <input type="hidden" name="password">
+
+            <div class="box">
+                <label for="_ft_name">Nombre</label>
+                <label for="_lt_name">Apellido</label>
+                <input type="text" name="firts_name" id="_ft_name" required>
+                <input type="text" name="last_name" id="_lt_name" required>
+            </div>
+
+            <div class="box">
+                <label for="_type">Tipo de Empleado</label>
+                <label for="_rn">RUT/RUN</label>
+                <select name="type" id="_type" required>
+                    <option {{'selected default' if type == "null"}} disabled>-- Selecciona Uno --</option>
+                    <option value="manager" {{'selected default' if type == 'manager'}}>Gerente</option>
+                    <option value="seller" {{'selected default' if type == 'seller'}}>Vendedor</option>
+                </select>
+                <input type="text" name="username" id="_rn" required>
+            </div>
+
+            <label for="_email">Correo Electronico</label>
+            <input type="email" name="email" id="_email" required>
+
+            <button type="submit">Agregar Empleado</button>
+        </form>
+    </div>
+</section>
+{% endblock %}
