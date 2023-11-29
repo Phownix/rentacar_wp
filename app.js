@@ -50,6 +50,7 @@ app.use('/', express.static('public'));
 
 app.use(async(req, res, next) => {
     app.locals.user = req.user;
+    app.locals.path = req.path != '/companies' && req.path != '/fleet' && req.path != '/' ? 'account' : req.path;
 
     res.set({"X-Powered-By": "InacapTEAM"})
     next();

@@ -17,10 +17,10 @@ export class UserController {
                     res.redirect("/account/manage/cars");
                     break;
                 case "employee":
-                    res.redirect("account/rent");
+                    res.redirect("/account/rent");
                     break
                 case "user":
-                    res.redirect("/");
+                    res.redirect("/account/activity");
                     break
                 default:
                     res.redirect("/")

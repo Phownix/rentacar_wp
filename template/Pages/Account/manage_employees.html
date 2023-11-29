@@ -12,13 +12,19 @@
         <p>Agrega, Edita y Elimina Cuentas de Empleados</p>
     </header>
 
+    
+    {% if employees %}
+    <div class="hd_employees">
+        <a href="/account/manage/employees/add">Agregar Empleado</a>
+    </div>
     <div class="list people">
-        {% if employees %}
-            {% for x in employees %}
-            <h3>{{x.firts_name}} {{x.last_name}}</h3>
-            <span>{{x.type}}</span>
-            {% endfor %}
-        {% else %}
+        {% for x in employees %}
+        <h3>{{x.firts_name}} {{x.last_name}}</h3>
+        <span>{{x.type}}</span>
+        {% endfor %}
+    </div>
+    {% else %}
+    <div class="list people">
         <div class="set_one">
             <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0"/>
@@ -27,7 +33,7 @@
             <p>Antes de continuar te aconsejamos crear un usuario de tipo "Manager", una ves creado podras eliminar el usuario administrador</p>
             <a href="/account/manage/employees/add?type=manager">Agregar Manager</a>
         </div>
-        {% endif %}
     </div>
+    {% endif %}
 </section>
 {% endblock %}

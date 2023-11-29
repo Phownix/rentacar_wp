@@ -5,18 +5,18 @@
         <div class="collapse" id="navbar-collapse">
             <ul class="navbar-menu">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/">Inicio</a>
+                    <a class="nav-link {{'active' if path == '/'}}" href="/">Inicio</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/fleet">Nuestra Flota</a>
+                    <a class="nav-link {{'active' if path == '/fleet'}}" href="/fleet">Nuestra Flota</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="/companies">Empresas</a>
+                    <a class="nav-link {{'active' if path == '/companies'}}" href="/companies">Empresas</a>
                 </li>
 
                 <li class="nav-item">
                     {% if user %}
-                    <a href="/account" class="nav-link login">Mi Perfil</a>
+                    <a href="/account" class="nav-link login {{'active' if path == 'account'}}">Mi Perfil</a>
                     {% else %}
                     <a href="/auth/login" class="nav-link login">Ingresar</a>
                     {% endif %}

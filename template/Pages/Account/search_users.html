@@ -49,4 +49,36 @@
         {% endif %}
     </div>
 </section>
+
+<script>
+    let form_date = document.querySelector('form');
+    let input_rut = document.querySelector('#_run');
+    
+    function validarRut(rut) {
+        const [numero, digitoVerificador] = rut.split('-');
+        const formato = /^\d{7,8}-\d$/.test(rut);
+
+        let suma = 0;
+        let multiplicador = 2;
+
+        for (let i = numero.length - 1; i >= 0; i--) {
+            suma += parseInt(numero.charAt(i)) * multiplicador;
+            multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
+        }
+
+        const resultado = 11 - (suma % 11);
+        const digitoEsperado = resultado === 11 ? 0 : resultado;
+
+        console.log(parseInt(digitoVerificador) === digitoEsperado)
+
+        return formato && parseInt(digitoVerificador) === digitoEsperado;
+    }
+
+    form_date.addEventListener('submit', (e) => {
+        if(!validarRut(input_rut.value)) {
+            e.preventDefault();
+            input_rut.classList.add('error')
+        };
+    })
+</script>
 {% endblock %}
